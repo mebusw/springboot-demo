@@ -23,6 +23,8 @@ dependencies {
     // http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#using-boot-starter-poms
 
     compile 'org.avaje.ebeanorm:avaje-ebeanorm:6.16.4'
+    compile 'org.avaje:avaje-agentloader:2.1.2'
+    compile 'org.avaje.ebeanorm:avaje-ebeanorm-agent:4.9.1'
     compile 'com.h2database:h2:1.4.186'
     //For deploying in a JEE web or web server, it may be best to enhance the model classes at build time.
 

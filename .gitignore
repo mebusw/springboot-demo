@@ -6,4 +6,9 @@ target/
 gradlew
 gradlew.bat
 *.class
-
+*.iml
+*.iws
+log/
+*.log
+h2-create-all.sql
+h2-drop-all.sql
