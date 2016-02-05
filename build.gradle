@@ -26,6 +26,8 @@ dependencies {
     compile 'com.h2database:h2:1.4.186'
     //For deploying in a JEE web or web server, it may be best to enhance the model classes at build time.
 
+    compile 'com.google.code.gson:gson:2.5'
+
 
 
 }
