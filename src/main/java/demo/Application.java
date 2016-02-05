@@ -21,7 +21,7 @@ public class Application {
 
 
         if (!AgentLoader.loadAgentFromClasspath("avaje-ebeanorm-agent", "debug=1;packages=org.example.**")) {
-            System.out.println("avaje-ebeanorm-agent not found in classpath - not dynamically loaded");
+            logger.warn("avaje-ebeanorm-agent not found in classpath - not dynamically loaded");
         }
 
         LoadExampleData.load();

@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Arrays;
 
 @RestController
-@RequestMapping(value = "/customers")
-public class Customer {
+@RequestMapping(value = "/customers", produces = "application/json")
+public class CustomerController {
     @RequestMapping("/")
     String customers() {
         Gson gson = new Gson();
@@ -21,7 +21,7 @@ public class Customer {
 
     @RequestMapping(value = "/{customer}", method = RequestMethod.GET)
     String getCustomer(@PathVariable Long customer) {
-        return "Customer = " + customer;
+        return "CustomerController = " + customer;
     }
 
 }
