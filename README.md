@@ -25,3 +25,7 @@ Start the web application and view <http://localhost:8080>:
 You can setup classpath properly for IntelliJ:
 
     gradle idea
+
+# Tips
+
+1. All of your application components (@Component, @Service, @Repository, @Controller etc.) will be automatically registered as Spring Beans.
