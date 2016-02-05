@@ -1,5 +1,7 @@
 # SpringBoot Demo
 
+![](https://travis-ci.org/mebusw/springboot-demo.svg?branch=master)
+
 This is an sample starter project with:
 * SpringBoot as framework
 * FreeMarker as frontend template
