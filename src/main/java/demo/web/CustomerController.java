@@ -1,22 +1,18 @@
 package demo.web;
 
-import com.google.gson.Gson;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.List;
 
 @RestController
-@RequestMapping(value = "/customers", produces = "application/json")
+@RequestMapping(value = "/customers", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CustomerController {
     @RequestMapping("/")
-    String customers() {
-        Gson gson = new Gson();
-        return gson.toJson(Arrays.asList(1,2,3));
-
-
+    @ResponseBody
+    List customers() {
+        return Arrays.asList(1,2,3);
     }
 
     @RequestMapping(value = "/{customer}", method = RequestMethod.GET)
