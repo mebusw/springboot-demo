@@ -42,6 +42,10 @@ public class ExTest {
     }
 
 
+    /**
+     * Spring boot encapsulate mockMvc as TestRestTemplate
+     * @throws Exception
+     */
     @Test
     public void testCustomerController() throws Exception {
         final String BASE_URL = "http://localhost:8080/";

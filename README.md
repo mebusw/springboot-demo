@@ -4,7 +4,7 @@
 
 This is an sample starter project with:
 * SpringBoot as framework
-* FreeMarker as frontend template
+* FreeMarker as frontend templates
 * Gson as json parser
 * Ebean as ORM
 * H2 as database engine
