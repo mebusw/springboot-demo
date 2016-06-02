@@ -31,3 +31,4 @@ You can setup classpath properly for IntelliJ:
 # Tips
 
 1. All of your application components (@Component, @Service, @Repository, @Controller etc.) will be automatically registered as Spring Beans.
+2. You need to press Ctrl/Cmd+F9 to compile the classes first before refresh the display.
