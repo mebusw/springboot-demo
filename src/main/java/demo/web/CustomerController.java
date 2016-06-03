@@ -24,7 +24,7 @@ public class CustomerController {
     @RequestMapping(value = "/{customer}", method = RequestMethod.GET)
     @ResponseBody
     String getCustomer(@PathVariable("customer") Long customer) {
-        return "CustomerController.getCustomer = " + customer;
+        return "CustomerController = " + customer;
     }
 
 

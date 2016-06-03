@@ -5,19 +5,14 @@
 This is an sample starter project with:
 * SpringBoot as framework
 * FreeMarker as frontend templates
-* Gson as json parser
+* Jackson as json parser
 * Ebean as ORM
 * H2 as database engine
 
 # Installations
 
-Install H2 database:
-
-    brew install h2
-
 Download the code and run tests:
 
-    h2
     gradle test
 
 Start the web application and view <http://localhost:8080>:
@@ -28,7 +23,14 @@ You can setup classpath properly for IntelliJ:
 
     gradle idea
 
+Spring Boot includes H2 already.
+Only to manage H2 database, start H2 in console and change it to `server` mode which supports multiple connections:
+
+    brew install h2
+    h2
+
+
 # Tips
 
 1. All of your application components (@Component, @Service, @Repository, @Controller etc.) will be automatically registered as Spring Beans.
-2. You need to press Ctrl/Cmd+F9 to compile the classes first before refresh the display.
+2. You need to press Ctrl/Cmd+F9 to compile the classes first before refresh the display when `springloaded` enabled.

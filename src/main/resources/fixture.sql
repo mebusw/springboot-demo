@@ -1,0 +1,1 @@
+insert into o_product ( id , name , sku , version , when_created , when_updated ) values ( 90,'toy',123,1,now(),now());
