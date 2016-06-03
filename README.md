@@ -11,6 +11,11 @@ This is an sample starter project with:
 
 # Installations
 
+Install H2 database:
+
+    brew install h2
+    h2
+
 Download the code and run tests:
 
     gradle test
@@ -23,10 +28,8 @@ You can setup classpath properly for IntelliJ:
 
     gradle idea
 
-Spring Boot includes H2 already.
 Only to manage H2 database, start H2 in console and change it to `server` mode which supports multiple connections:
 
-    brew install h2
     h2
 
 

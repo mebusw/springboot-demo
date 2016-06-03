@@ -3,4 +3,6 @@ jdk:
   - oraclejdk8
 
 before_install:
-  - sudo apt-get install h2
+  - wget http://www.h2database.com/h2-2016-05-26.zip
+  - unzip -x h2-2016-05-26.zip -d h2-2016-05-26
+  - h2-2016-05-26/bin/h2 &
