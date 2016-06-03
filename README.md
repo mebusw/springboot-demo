@@ -14,6 +14,9 @@ This is an sample starter project with:
 Install H2 database:
 
     brew install h2
+
+Start up H2 (no need for embedded mode, only if you use server mode):
+
     h2
 
 Download the code and run tests:
