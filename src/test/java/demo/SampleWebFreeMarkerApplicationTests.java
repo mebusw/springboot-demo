@@ -24,7 +24,7 @@ import static org.hamcrest.Matchers.is;
  * @author Andy Wilkinson
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(Application.class)
+@SpringApplicationConfiguration(classes = Application.class)
 @WebIntegrationTest(randomPort = true)
 @DirtiesContext
 public class SampleWebFreeMarkerApplicationTests {

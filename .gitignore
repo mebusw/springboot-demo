@@ -10,5 +10,3 @@ gradlew.bat
 *.iws
 log/
 *.log
-h2-create-all.sql
-h2-drop-all.sql

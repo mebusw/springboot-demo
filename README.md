@@ -25,11 +25,7 @@ Download the code and run tests:
 
 Start the web application and view <http://localhost:8080>:
 
-    gradle bootRun
-
-You can setup classpath properly for IntelliJ:
-
-    gradle idea
+    mvn spring-boot:run
 
 Only to manage H2 database, start H2 in console and change it to `server` mode which supports multiple connections:
 

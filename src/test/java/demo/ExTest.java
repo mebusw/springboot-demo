@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(Application.class)
+@SpringApplicationConfiguration(classes = Application.class)
 public class ExTest {
 
     @Autowired
@@ -44,6 +44,7 @@ public class ExTest {
 
     /**
      * Spring boot encapsulate mockMvc as TestRestTemplate
+     *
      * @throws Exception
      */
     @Test
