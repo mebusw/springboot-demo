@@ -21,7 +21,7 @@ Start up H2 (no need for embedded mode, only if you use server mode):
 
 Download the code and run tests:
 
-    gradle test
+    mvn test
 
 Start the web application and view <http://localhost:8080>:
 
