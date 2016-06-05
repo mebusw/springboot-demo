@@ -2,6 +2,7 @@ package demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.TestRestTemplate;
@@ -10,6 +11,7 @@ import org.springframework.http.*;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.servlet.http.HttpSession;
 import java.util.Arrays;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -28,6 +30,9 @@ import static org.hamcrest.Matchers.is;
 @WebIntegrationTest(randomPort = true)
 @DirtiesContext
 public class SampleWebFreeMarkerApplicationTests {
+
+    @Autowired
+    private HttpSession httpSession;
 
     @Value("${local.server.port}")
     private int port;

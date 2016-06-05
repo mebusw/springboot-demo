@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -23,7 +24,8 @@ public class CustomerController {
 
     @RequestMapping(value = "/{customer}", method = RequestMethod.GET)
     @ResponseBody
-    String getCustomer(@PathVariable("customer") Long customer) {
+    String getCustomer(@PathVariable("customer") Long customer, HttpSession httpSession) {
+        System.out.println("customer = [" + customer + "], httpSession = [" + httpSession + "]");
         return "CustomerController = " + customer;
     }
 
