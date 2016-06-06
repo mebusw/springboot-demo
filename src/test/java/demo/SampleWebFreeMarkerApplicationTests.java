@@ -7,8 +7,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.TestRestTemplate;
 import org.springframework.boot.test.WebIntegrationTest;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.*;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.stereotype.Component;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -30,7 +34,6 @@ import static org.hamcrest.Matchers.is;
 @SpringApplicationConfiguration(classes = Application.class)
 @WebIntegrationTest(randomPort = true)
 @DirtiesContext
-@EnableWebSecurity
 public class SampleWebFreeMarkerApplicationTests {
 
     @Autowired
@@ -38,6 +41,18 @@ public class SampleWebFreeMarkerApplicationTests {
 
     @Value("${local.server.port}")
     private int port;
+
+
+    @Component
+    @EnableWebSecurity
+    @Order(0)
+    public static class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http.authorizeRequests()
+                    .anyRequest().permitAll();
+        }
+    }
 
     @Test
     public void testFreeMarkerTemplate() throws Exception {
