@@ -23,10 +23,17 @@ public class WelcomeController {
     public String welcome(Map<String, Object> model) {
         Authentication authentication = SecurityContextHolder.getContext().
                 getAuthentication();
-        String username = authentication.getName() + authentication.getPrincipal();
+        String username = authentication.getName() + " " +  authentication.getPrincipal();
         model.put("time", new Date());
         model.put("message", this.message + " isAuthenticated=" + authentication.isAuthenticated() + "   " + username);
         return "welcome";
+    }
+
+    @RequestMapping("/welcomeandy")
+    public String welcomeandy(Map<String, Object> model) {
+        model.put("time", new Date());
+        model.put("message", this.message);
+        return "welcomeandy";
     }
 
     @RequestMapping("/login")

@@ -8,6 +8,7 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.TestRestTemplate;
 import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.http.*;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -29,6 +30,7 @@ import static org.hamcrest.Matchers.is;
 @SpringApplicationConfiguration(classes = Application.class)
 @WebIntegrationTest(randomPort = true)
 @DirtiesContext
+@EnableWebSecurity
 public class SampleWebFreeMarkerApplicationTests {
 
     @Autowired
@@ -40,7 +42,7 @@ public class SampleWebFreeMarkerApplicationTests {
     @Test
     public void testFreeMarkerTemplate() throws Exception {
         ResponseEntity<String> entity = new TestRestTemplate()
-                .getForEntity("http://localhost:" + this.port + "/welcome/", String.class);
+                .getForEntity("http://localhost:" + this.port + "/welcomeandy/", String.class);
         assertThat(entity.getStatusCode(), is(HttpStatus.OK));
         assertThat(entity.getBody(), containsString("Hello, Andy"));
     }
@@ -51,7 +53,7 @@ public class SampleWebFreeMarkerApplicationTests {
         headers.setAccept(Arrays.asList(MediaType.TEXT_HTML));
         HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
 
-        ResponseEntity<String> responseEntity = new TestRestTemplate().exchange(
+        ResponseEntity<String> responseEntity = new TestRestTemplate("jacky", "123").exchange(
                 "http://localhost:" + this.port + "/does-not-exist", HttpMethod.GET,
                 requestEntity, String.class);
 
