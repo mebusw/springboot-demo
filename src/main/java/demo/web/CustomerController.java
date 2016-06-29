@@ -16,14 +16,12 @@ import java.util.Scanner;
 @RequestMapping(value = "/customers", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CustomerController {
     @RequestMapping(value = "/")
-    @ResponseBody
     List customers() {
         return Arrays.asList(1, 2, 3);
     }
 
 
     @RequestMapping(value = "/{customer}", method = RequestMethod.GET)
-    @ResponseBody
     String getCustomer(@PathVariable("customer") Long customer, HttpSession httpSession) {
         System.out.println("customer = [" + customer + "], httpSession = [" + httpSession + "]");
         return "CustomerController = " + customer;
@@ -31,7 +29,6 @@ public class CustomerController {
 
 
     @RequestMapping(value = "/objmap", method = RequestMethod.GET)
-    @ResponseBody
     String objmap() {
         ObjectMapper mapper = new ObjectMapper();
         String jsonInString = "{\"name\":\"mkyong\", \"age\":123}";
@@ -46,7 +43,6 @@ public class CustomerController {
     }
 
     @RequestMapping(value = "/commits", method = RequestMethod.GET)
-    @ResponseBody
     String getCommits() {
         String url = "https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha=";
         try {
