@@ -27,6 +27,8 @@ import static org.hamcrest.Matchers.is;
 /**
  * Basic integration tests for FreeMarker application.
  *
+ * To run this test only with `mvn '-Dtest=demo.*Tests' test`
+ *
  * @author Phillip Webb
  * @author Andy Wilkinson
  */
@@ -55,7 +57,15 @@ public class SampleWebFreeMarkerApplicationTests {
     }
 
     @Test
-    public void testFreeMarkerTemplate() throws Exception {
+    public void callHelper() throws Exception {
+        System.out.println("Port=" + port);
+        new SampleWebFreeMarkerApplicationSubTestsHelper().FreeMarkerTemplate2(port);
+    }
+
+
+
+    @Test
+    public void freeMarkerTemplate() throws Exception {
         ResponseEntity<String> entity = new TestRestTemplate()
                 .getForEntity("http://localhost:" + this.port + "/welcomeandy/", String.class);
         assertThat(entity.getStatusCode(), is(HttpStatus.OK));
@@ -63,7 +73,7 @@ public class SampleWebFreeMarkerApplicationTests {
     }
 
     @Test
-    public void testFreeMarkerErrorTemplate() throws Exception {
+    public void freeMarkerErrorTemplate() throws Exception {
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.TEXT_HTML));
         HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
